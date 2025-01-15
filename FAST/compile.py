@@ -5,18 +5,35 @@ import subprocess
 current_dir = os.path.dirname(os.path.realpath(__file__))
 
 
-def run_compile_sh():
-    # run_cmd = "sh FAST/compile.sh"
-    run_cmd = "sh " + current_dir + "/compile.sh"
-    print(run_cmd)
-    p = subprocess.Popen(run_cmd, shell=True, stderr=subprocess.STDOUT)
-    p.wait()
+# export CUDA_HOME=/usr/local/cuda-12.6
+# export PATH=/usr/local/cuda-12.6/bin:$PATH
+# export LD_LIBRARY_PATH=/usr/local/cuda-12.6/lib64:$LD_LIBRARY_PATH
 
-    if p.returncode != 0:
-        print("Error in compile.sh")
-        exit(1)
+# cd FAST/models/post_processing/pa/
+# python setup.py build_ext --inplace
+# cd ../pse/
+# python setup.py build_ext --inplace
+# cd ../ccl/
+# python setup.py build_ext --inplace
+# cd ../../../
+
+
+def compile():
+    os.environ["CUDA_HOME"] = "/usr/local/cuda-12.6"
+    os.environ["PATH"] = "/usr/local/cuda-12.6/bin:" + os.environ["PATH"]
+    os.environ["LD_LIBRARY_PATH"] = (
+        "/usr/local/cuda-12.6/lib64:" + os.environ["LD_LIBRARY_PATH"]
+    )
+
+    # Compile post_processing/pa
+    os.chdir(os.path.join(current_dir, "models/post_processing/pa"))
+    subprocess.call(["python", "setup.py", "build_ext", "--inplace"])
+    os.chdir(os.path.join(current_dir, "models/post_processing/pse"))
+    subprocess.call(["python", "setup.py", "build_ext", "--inplace"])
+    os.chdir(os.path.join(current_dir, "models/post_processing/ccl"))
+    subprocess.call(["python", "setup.py", "build_ext", "--inplace"])
+    os.chdir(current_dir)
 
 
 if __name__ == "__main__":
-    run_compile_sh()
-    print("Done")
+    compile()
