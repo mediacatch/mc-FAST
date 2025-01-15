@@ -9,8 +9,6 @@ classifiers = [
 ]
 requires-python = ">=3.12"
 dependencies = [
-    "numpy",
-    "pandas",
     "scipy",
     "torch",
     "torchvision",
@@ -24,7 +22,9 @@ dependencies = [
     "yacs",
     "tqdm",
     "opencv-python",
-    "dataset"
+    "dataset",
+    "numpy>2",
+
 ]
 
 [build-system]

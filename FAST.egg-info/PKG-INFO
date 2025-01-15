@@ -6,8 +6,6 @@ Keywords: fast,performance,module
 Classifier: Programming Language :: Python :: 3.12
 Requires-Python: >=3.12
 Description-Content-Type: text/markdown
-Requires-Dist: numpy
-Requires-Dist: pandas
 Requires-Dist: scipy
 Requires-Dist: torch
 Requires-Dist: torchvision
@@ -22,6 +20,7 @@ Requires-Dist: yacs
 Requires-Dist: tqdm
 Requires-Dist: opencv-python
 Requires-Dist: dataset
+Requires-Dist: numpy>2
 
 # FAST
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/fast-searching-for-a-faster-arbitrarily/scene-text-detection-on-total-text)](https://paperswithcode.com/sota/scene-text-detection-on-total-text?p=fast-searching-for-a-faster-arbitrarily)

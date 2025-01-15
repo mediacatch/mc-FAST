@@ -1,8 +1,8 @@
 README.md
 pyproject.toml
-setup.py
 FAST/README.md
 FAST/__init__.py
+FAST/compile.py
 FAST/release.py
 FAST/reparameter.py
 FAST/test.py
