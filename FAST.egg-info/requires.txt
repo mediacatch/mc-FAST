@@ -1,0 +1,16 @@
+numpy
+pandas
+scipy
+torch
+torchvision
+editdistance
+Polygon3
+pyclipper
+Cython
+mmcv-full
+prefetch_generator
+scipy
+yacs
+tqdm
+opencv-python
+dataset
