@@ -18,7 +18,6 @@ dependencies = [
     "Cython",
     "mmcv-full",
     "prefetch_generator",
-    "scipy",
     "yacs",
     "tqdm",
     "opencv-python",
@@ -30,3 +29,9 @@ dependencies = [
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"FAST" = ["*.sh", "*.pyx", "*.pyc"]

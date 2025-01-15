@@ -3,6 +3,7 @@ pyproject.toml
 FAST/README.md
 FAST/__init__.py
 FAST/compile.py
+FAST/compile.sh
 FAST/release.py
 FAST/reparameter.py
 FAST/test.py

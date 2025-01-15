@@ -7,7 +7,6 @@ pyclipper
 Cython
 mmcv-full
 prefetch_generator
-scipy
 yacs
 tqdm
 opencv-python

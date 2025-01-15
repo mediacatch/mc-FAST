@@ -15,7 +15,6 @@ Requires-Dist: pyclipper
 Requires-Dist: Cython
 Requires-Dist: mmcv-full
 Requires-Dist: prefetch_generator
-Requires-Dist: scipy
 Requires-Dist: yacs
 Requires-Dist: tqdm
 Requires-Dist: opencv-python
