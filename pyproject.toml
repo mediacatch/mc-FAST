@@ -1,0 +1,42 @@
+[project]
+name = "FAST"
+version = "0.1.0"
+description = "MediaCatch's modulified version of https://github.com/czczup/FAST"
+readme = "FAST/README.md"
+keywords = ["fast", "performance", "module"]
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "torch",
+    "torchvision",
+    "editdistance",
+    "Polygon3",
+    "pyclipper",
+    "Cython",
+    "mmcv-full",
+    "prefetch_generator",
+    "scipy",
+    "yacs",
+    "tqdm",
+    "opencv-python",
+    "dataset"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "tag"
+
+[tool.poetry.scripts]
+compile-cpp = "sh FAST/compile.sh"
+
+[tool.hatch.build.targets.sdist]
+
+[tool.hatch.build.targets.wheel]
