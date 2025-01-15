@@ -31,12 +31,5 @@ dependencies = [
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.hatch.version]
-source = "tag"
-
-[tool.poetry.scripts]
-compile-cpp = "sh FAST/compile.sh"
-
-[tool.hatch.build.targets.sdist]
-
-[tool.hatch.build.targets.wheel]
+[tool.hatch.build.hooks.custom]
+paths = { default = "hatch_build.py" }
