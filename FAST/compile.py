@@ -21,8 +21,8 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 def compile():
     os.environ["CUDA_HOME"] = "/usr/local/cuda-12.6"
     os.environ["PATH"] = "/usr/local/cuda-12.6/bin:" + os.environ["PATH"]
-    os.environ["LD_LIBRARY_PATH"] = (
-        "/usr/local/cuda-12.6/lib64:" + os.environ["LD_LIBRARY_PATH"]
+    os.environ["LD_LIBRARY_PATH"] = "/usr/local/cuda-12.6/lib64:" + os.environ.get(
+        "LD_LIBRARY_PATH", ""
     )
 
     # Compile post_processing/pa
