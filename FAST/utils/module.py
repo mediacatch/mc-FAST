@@ -40,7 +40,7 @@ def load_fast_model(
     return model, cfg
 
 
-def process_image(img, model_short_size=640):
+def process_image(img, model_short_size=640, only_rescale=False):
     img_meta = dict(org_img_size=[np.array(img.shape[:2])])
 
     img = scale_aligned_short(img, model_short_size)
@@ -49,6 +49,9 @@ def process_image(img, model_short_size=640):
     img = Image.fromarray(img)
     img = img.convert("RGB")
     img = transforms.ToTensor()(img)
+
+    if only_rescale:
+        return img
     img = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])(
         img
     )
